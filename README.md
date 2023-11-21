@@ -1,6 +1,26 @@
-# Getting Started with Create React App
+## Progress Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+->My 'progressList' state is the main state holding the progress in one place.
+->ProgressList is an array of objects, each object represents one category, contains all tasks and an extra parameter: the 'disabled'.
+
+##In my solution I also paid attention to the details and edge cases, for example:
+
+- adding unlimited categories is available to the user
+- adding unlimited tasks is also available, note: tasks can be added to any categories which are yet to completed or is currently open
+- for previously completed category to add task -> a task needs to be opened from that category, and addition can be made after.
+- adding a "Remove" section to be able to edit tasks
+- only the currently enabled category's tasks can be removed
+- when a category has all it's tasks checked, then the category becomes completed and locked
+- although, reopen is possible: the user needs to agree that unlocking that task will affect the the already completed ones, so all the tasks after that will be unlocked for double-checking changes
+
+##Proposals for the future:
+
+- to include drag and drop between the categories and tasks, to fasten the changes
+- when progress on a topic is fully completed, after the modal ask the user if new progress should be started, and save the previous progress to DB
+- adding subtasks to tasks, and/or action-points and assign them to roles (fetched from DB)
+- generate PDF functionality for quick sharing in between users
+- possibility to remove category once it has no tasks
+- write more tests to check the functionality
 
 ## Available Scripts
 
@@ -10,7 +30,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
@@ -18,29 +37,3 @@ You will also see any lint errors in the console.
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

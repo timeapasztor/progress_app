@@ -1,9 +1,21 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { getByLabelText, screen, render } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("Labels", () => {
+  global.matchMedia =
+    global.matchMedia ||
+    function () {
+      return {
+        matches: false,
+        addListener: function () {},
+        removeListener: function () {},
+      };
+    };
+
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const container = document?.querySelector("#app");
+  const add = screen.getByTestId("add");
+  const remove = screen.getByTestId("remove");
+  const reopen = screen.getByTestId("reopen");
 });
